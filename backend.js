@@ -62,3 +62,6 @@ app.delete("/",function(req,res){
     
 })
 app.listen(3000);
+
+
+//TODO server can be build using POST GET DELETE
