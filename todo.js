@@ -3,7 +3,9 @@ const app = express()
 const port = 3000;
 
 
-const todo = ["coding","workout","gym"];
+let todo = [ ];
+
+app.use(express.json());
 
 app.get("/",(req,res)=>{
     //const to = req.todo;
@@ -15,14 +17,12 @@ app.post("/",(req,res) =>{
     const newtodo = req.body.newtodo;
     if(newtodo){
         todo.push(newtodo);
-        res.json({succes: true, todo: todo});
+        res.status(201).json({success: true, message:"TOdo added succesfully"});
     }else{
-        res.status(4000).json({success: false, message: "New todo is not provided"})
+        res.status(400).json({success: false,message: "New todo not provided"});
     }
-
-    //res.json({out});
 });
 
 app.listen(port,()=>{
-    console.log('Server is running on port ${port}');
+    console.log(`Server is running on port ${port}`);
 });
