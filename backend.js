@@ -11,7 +11,11 @@ app.get("/interest",(req,res)=>{
     const time = parseInt(req.query.rate);
 
     const inter = principal * rate * time/100;
+    const total = principal + inter;
 
-    res.send(inter.toString());
+    res.json({
+        Total: total,
+        Intrest: inter
+    });
 });
 app.listen(3006);
