@@ -1,0 +1,32 @@
+<html>
+    <script>
+        function todo(){
+            var a = document.getElementById("title").value;
+            var b = document.getElementyId("task").value;
+
+
+        };
+        function list(){
+            let todo = {
+                Title: a,
+                Task:b
+            }
+            document.getElementById("todolist").innerHTML= todo
+
+
+        };
+
+    </script>
+    <body>
+        <input id = "title" type="text" placeholder="Enter TItle">
+        <br><br>
+        <input id = "task" type="text" placeholder="Enter task">
+        <br><br>
+        <button onclick="todo()">Add to TODO list</button>
+        <br><br>
+        <button onclick="list()">List your TODO's</button>
+        <div id="todolist">
+
+        </div>
+    </body>
+</html>
